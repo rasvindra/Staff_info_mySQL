@@ -9,13 +9,13 @@ VALUES
     (7,"Accountant", "George", "Jetson", 66666),
     (8,"Account Manager", "Jane", "Jetson", 80000);
 
-INSERT INTO incharge (empid, title, department, manager)
+INSERT INTO incharge (id, title, department, manager)
 VALUES
-    (1,"Technician", "Engineering","Conan the Barbarian"),
-    (2,"Lead Technician", "Engineering","Conan the Barbarian"),
-    (3,"Accountant", "Finance","Scrooge McDuck"),
-    (4,"Sales", "Finance","Scrooge McDuck"),
-    (5,"Account Manager", "Finance","Scrooge McDuck"),
-    (6,"Product Tester", "Quality Assurance","Norville Rogers"),
-    (7,"Design and Marketing", "Quality Assurance","Norville Rogers"),
-    (8,"Gopher", "Facilities","Solomn Grundy");    
+    (1, "Technician","Engineering","Conan the Barbarian"),
+    (1, "Lead_Technician","Engineering","Conan the Barbarian"),
+    (2, "Sales","Finance","Scrooge McDuck"),
+    (2, "Accountant","Finance","Scrooge McDuck"),
+    (2, "Account Manager","Finance","Scrooge McDuck"),
+    (3, "Design and Marketing","Quality Assurance","Norville Rogers"),
+    (3, "Product_Tester","Quality Assurance","Norville Rogers"),
+    (4, "Gopher","Facilities","Solomn Grundy");    

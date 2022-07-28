@@ -12,7 +12,7 @@ CREATE TABLE person_position (
 );
 
 CREATE TABLE incharge (
-  empid INT NOT NULL,
+  id INT NOT NULL,
   title VARCHAR(30) NOT NULL,
   department VARCHAR(30) NOT NULL,
   manager VARCHAR(30)
