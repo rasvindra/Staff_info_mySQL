@@ -1,17 +1,21 @@
-INSERT INTO person_position (id, first_name, last_name, title, salary)
+INSERT INTO person_position (empid, title, first_name, last_name, salary)
 VALUES
-    ( 1, "Fred","Flinstone","Technician", 70000),
-    ( 2, "Wilma","Flinstone","Lead Technician",82000),
-    ( 3, "Bam Bam","Rubble","Product Tester",48000),
-    ( 4, "Pebbles","Flinstone","Design and Marketing", 68000),
-    ( 5, "Betty","Rubble","Sales Lead",90000),
-    ( 6, "Barney","Ruble","Gopher", 68000),
-    ( 7, "George","Jetson","Accountant",66666),
-    ( 8, "Jane","Jetson","Account Manager",80000);
+    (1,"Technician", "Fred", "Flinstone", 70000),
+    (2,"Lead_Technician", "Wilma", "Flinstone", 82000),
+    (3,"Product_Tester", "Bam Bam", "Rubble",48000),
+    (4,"Design and Marketing", "Pebbles","Flinstone", 68000),
+    (5,"Sales", "Betty", "Rubble", 90000),
+    (6,"Gopher", "Barney", "Ruble", 68000),
+    (7,"Accountant", "George", "Jetson", 66666),
+    (8,"Account Manager", "Jane", "Jetson", 80000);
 
-INSERT INTO incharge (id, department, manager)
+INSERT INTO incharge (empid, title, department, manager)
 VALUES
-    ( 1, "Engineering","Conan the Barbarian"),
-    ( 2, "Finance","Scrooge McDuck"),
-    ( 3, "Quality Assurance","Norville Rogers"),
-    ( 4, "Facilities","Solomn Grundy");    
+    (1,"Technician", "Engineering","Conan the Barbarian"),
+    (2,"Lead Technician", "Engineering","Conan the Barbarian"),
+    (3,"Accountant", "Finance","Scrooge McDuck"),
+    (4,"Sales", "Finance","Scrooge McDuck"),
+    (5,"Account Manager", "Finance","Scrooge McDuck"),
+    (6,"Product Tester", "Quality Assurance","Norville Rogers"),
+    (7,"Design and Marketing", "Quality Assurance","Norville Rogers"),
+    (8,"Gopher", "Facilities","Solomn Grundy");    
