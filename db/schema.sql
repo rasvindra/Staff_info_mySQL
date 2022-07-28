@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS employee_tracker_db;
-CREATE DATABASE employee_Tracker_db;
+CREATE DATABASE employee_tracker_db;
 
-USE employee_Tracker_db;
+USE employee_tracker_db;
 
 CREATE TABLE person_position (
   id INT NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE person_position (
 );
 
 CREATE TABLE incharge (
-    id INT NOT NULL
+    id INT NOT NULL,
     department VARCHAR(30) NOT NULL,
-    manager VARCHAR(30),
+    manager VARCHAR(30)
 );
