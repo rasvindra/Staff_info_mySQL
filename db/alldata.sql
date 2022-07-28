@@ -2,6 +2,7 @@
 SELECT DISTINCT person_position.empid, person_position.title, incharge.department, person_position.salary
 FROM person_position
   INNER JOIN incharge;
+--   ON something
 
 -- Query that displays departments without duplicates. WORKS!!
 SELECT DISTINCT incharge.department, incharge.id FROM incharge;
@@ -13,3 +14,5 @@ LEFT JOIN incharge AS bossinfo
 ON person_position.title = incharge.title
 
 -- incharge.department, incharge.manager 
+
+SELECT position.title, position.salary, department.deptname FROM position LEFT JOIN department ON position.deptid = department.id

@@ -1,21 +1,28 @@
-INSERT INTO person_position (empid, title, first_name, last_name, salary)
+INSERT INTO department (deptname)
 VALUES
-    (1,"Technician", "Fred", "Flinstone", 70000),
-    (2,"Lead_Technician", "Wilma", "Flinstone", 82000),
-    (3,"Product_Tester", "Bam Bam", "Rubble",48000),
-    (4,"Design and Marketing", "Pebbles","Flinstone", 68000),
-    (5,"Sales", "Betty", "Rubble", 90000),
-    (6,"Gopher", "Barney", "Ruble", 68000),
-    (7,"Accountant", "George", "Jetson", 66666),
-    (8,"Account Manager", "Jane", "Jetson", 80000);
+    ("Engineering"),
+    ("Finance"),
+    ("Quality Assurance"),
+    ("Facilities");
 
-INSERT INTO incharge (id, title, department, manager)
+INSERT INTO position (title, salary, deptid)
 VALUES
-    (1, "Technician","Engineering","Conan the Barbarian"),
-    (1, "Lead_Technician","Engineering","Conan the Barbarian"),
-    (2, "Sales","Finance","Scrooge McDuck"),
-    (2, "Accountant","Finance","Scrooge McDuck"),
-    (2, "Account Manager","Finance","Scrooge McDuck"),
-    (3, "Design and Marketing","Quality Assurance","Norville Rogers"),
-    (3, "Product_Tester","Quality Assurance","Norville Rogers"),
-    (4, "Gopher","Facilities","Solomn Grundy");    
+    ("Technician",70000.00,1),
+    ("Lead_Technician",82000.00,1),
+    ("Sales",90000.00,2),
+    ("Accountant",66666.66,2),
+    ("Account Manager",80000.00,2),
+    ("Design and Marketing",68000.00,3),
+    ("Product_Tester",48000.00,3),
+    ("Gopher",68000.00,4);    
+
+--  INSERT INTO employee (first_name, last_name, position_id, manager_id)
+VALUES
+    ("Fred", "Flinstone", 1, 1),
+     ("Wilma", "Flinstone", 2, 1),
+     ("Bam Bam", "Rubble", 3, 2),
+     ("Pebbles","Flinstone", 4, 2),
+    ("Betty", "Rubble", 5, 2),
+    ("Barney", "Ruble", 6, 3),
+    ("George", "Jetson", 7, 3),
+    ("Jane", "Jetson", 8, 4);
