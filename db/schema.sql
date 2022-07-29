@@ -13,7 +13,7 @@ CREATE TABLE position (
   title VARCHAR(30) NOT NULL,
   salary DECIMAL(10,2) NOT NULL,
   deptid INT NOT NULL,
-  CONSTRAINT fk_department FOREIGN KEY(deptid) REFERENCES department(id) ON DELETE CASCADE
+  CONSTRAINT fk_department FOREIGN KEY (deptid) REFERENCES department(id) ON DELETE CASCADE
 );
 
 CREATE TABLE employee (
