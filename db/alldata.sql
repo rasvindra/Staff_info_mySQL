@@ -1,18 +1,19 @@
--- Supposed to display job title, empid, deprtment, and salary. NOT WORING DISPLAYS 32 LINES
-SELECT DISTINCT person_position.empid, person_position.title, incharge.department, person_position.salary
-FROM person_position
-  INNER JOIN incharge;
---   ON something
 
--- Query that displays departments without duplicates. WORKS!!
-SELECT DISTINCT incharge.department, incharge.id FROM incharge;
+-- Query that displays departments in readable way for User. Works!!
+SELECT department.id AS "Department ID", department.deptname AS "Department Name" FROM department;
 
--- Query that displays all emplayee data with no duplicates. DOES NOT WORK BECAUSE COLUMS FROM TWO TABLES DO NOT MATCH
-SELECT person_position.empid, person_position.first_name, person_position.last_name, person_position.title, person_position.salary
-FROM person_position AS info
-LEFT JOIN incharge AS bossinfo
-ON person_position.title = incharge.title
 
--- incharge.department, incharge.manager 
+-- Supposed to display job title, empid, deprtment, and salary. NOT WORING DISPLAYS 4 LINES
+SELECT employee.position_id, department.deptname, position.title, position.salary
+FROM department
+   JOIN position
+   ON department.id = position.id
+   Join employee
+   ON employee.id = position.id;
 
-SELECT position.title, position.salary, department.deptname FROM position LEFT JOIN department ON position.deptid = department.id
+
+-- Query that displays all emplayee data. DOES NOT WORK only showing 4 lines
+SELECT position.id, position.title, position.salary, employee.first_name, employee.last_name, employee.manager_id, department.deptname
+FROM department JOIN position ON department.id = position.id
+Join employee ON employee.id = position.id;
+

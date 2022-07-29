@@ -6,8 +6,8 @@ USE employee_tracker_db;
 CREATE TABLE department (
   id INT AUTO_INCREMENT PRIMARY KEY,
   deptname VARCHAR(30) NOT NULL
-
 );
+
 CREATE TABLE position (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(30) NOT NULL,
@@ -22,14 +22,7 @@ CREATE TABLE employee (
   last_name VARCHAR(30) NOT NULL,
   position_id INT NULL,
   manager_id INT,
-  -- INDEX position_ind (position_id),
-  FOREIGN KEY (position_id) REFERENCES position(id) ON DELETE SET NULL,
-  -- INDEX man_ind (manager_id),
-  FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
-
-  -- INDEX pos_ind (position_id),
-  -- CONSTRAINT fk_position FOREIGN KEY (position_id) REFERENCES position(id) ON DELETE SET NULL,
---  INDEX man_ind (manger_id),
-  -- CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
+ FOREIGN KEY (position_id) REFERENCES position (id) ON DELETE SET NULL,
+ FOREIGN KEY (manager_id) REFERENCES employee (id) ON DELETE SET NULL
 );
  

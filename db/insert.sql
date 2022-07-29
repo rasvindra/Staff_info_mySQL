@@ -16,12 +16,12 @@ VALUES
     ("Product_Tester",48000.00,3),
     ("Gopher",68000.00,4);    
 
---  INSERT INTO employee (first_name, last_name, position_id, manager_id)
+INSERT INTO employee (first_name, last_name, position_id, manager_id)
 VALUES
     ("Fred", "Flinstone", 1, 1),
-     ("Wilma", "Flinstone", 2, 1),
-     ("Bam Bam", "Rubble", 3, 2),
-     ("Pebbles","Flinstone", 4, 2),
+    ("Wilma", "Flinstone", 2, 1),
+    ("Bam Bam", "Rubble", 3, 2),
+    ("Pebbles","Flinstone", 4, 2),
     ("Betty", "Rubble", 5, 2),
     ("Barney", "Ruble", 6, 3),
     ("George", "Jetson", 7, 3),
