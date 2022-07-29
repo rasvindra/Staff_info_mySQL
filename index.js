@@ -29,28 +29,29 @@ inquirer.prompt ([
 
 },
 
+
 ]).then ((res) => {
   switch (res.choices) {
-    case 'View all Departments':
+    case "View all the Departments":
       viewAllDepartments();
       break;
-    case 'View all Employee Roles':
+    case "View all Employee Roles":
       viewAllRoles();
       break;
-    case 'View all Employee Data':
-      viewAllEmployee();
+    case 'View all Employees Data':
+      viewAllEmployees();
       break;
     case 'Add a NEW Department':
-      addDepartment();
+      addNewDepartment();
       break;
     case "Add a New Employee Role":
-      addRole();
+      addNewEmployeeRole();
+      break;
+    case "Add a New Employee":
+      addNewEmployee();
       break;
     case "Update an Employee's Role":
       updateEmployeeRole();
-      break;
-    case "Add a New Employee":
-      totalUtilizedBudget();
       break;
     default:
       throw new Error('You messed up!');

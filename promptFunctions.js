@@ -1,5 +1,8 @@
+const mysql = require("mysql")
+
+
 const viewAllDepartments = () => {
-    const query = "SELECT department.id AS Department ID, department.deptname AS Department Name FROM department;";
+    const query = "SELECT department.id AS 'Department ID', department.deptname AS 'Department Name' FROM department;";
     connection.query(
       query,
       (err, results) => {
@@ -99,6 +102,52 @@ const addNewEmployeeRole = async () => {
     })
   }
 
+  const updateEmployeeRole = async () => {
+    connection.query('Select * FROM employee', async (err, employees) => {
+        if (err) throw err;
+      const employeeSelected = await inquirer
+          .prompt([
+            {
+              name: "employee_id",
+              type: "list",
+              choices: employees.map(employee => ({name:employee.first_name + " " + employee.last_name, value: employee.id})),
+              message: "Which Employee Role would you like to Update? ",
+            }
+          ])
+      
+        connection.query("Select * FROM position", async (err, roles) => {
+          if (err) throw err;
+    
+          const roleSelected = await inquirer
+            .prompt([
+              {
+                name: "position_id",
+                type: "list",
+                choices: roles.map(role => ({name:position.title, value: position.id})),
+                message: "What is the Employee's new role? ",
+              }
+            ])
+    
+          connection.query(
+            'UPDATE employees_db.employee SET ? WHERE ?',
+            [
+              {
+                position_id: roleSelected.position_id,
+              },
+              {
+                id: employeeSelected.employee_id, 
+              }
+            ],
+            (err) => {
+              if (err) throw err;
+              console.log("Employee role updated successfully!")
+              start();
+            }
+          )
+        })
+      })
+    }
+
 
 const addNewEmployee = async () => {
   connection.query("Select * FROM position, async (err, positions)") => {
@@ -138,7 +187,7 @@ const addNewEmployee = async () => {
         if (responses.manager_id === "None") {
           responses.manager_id = null;
         }
-        
+
       connection.query(
           'INSERT INTO employee SET ?',
           {
@@ -152,55 +201,8 @@ const addNewEmployee = async () => {
             console.log("New employee added.\n");
             start();
           }
-      );
+      )
     })
-  
-
-const updateEmployeeRole = async () => {
-  connection.query('Select * FROM employee', async (err, employees) => {
-      if (err) throw err;
-    const employeeSelected = await inquirer
-        .prompt([
-          {
-            name: "employee_id",
-            type: "list",
-            choices: employees.map(employee => ({name:employee.first_name + " " + employee.last_name, value: employee.id})),
-            message: "Which Employee Role would you like to Update? ",
-          }
-        ])
-    
-      connection.query("Select * FROM position", async (err, roles) => {
-        if (err) throw err;
-  
-        const roleSelected = await inquirer
-          .prompt([
-            {
-              name: "position_id",
-              type: "list",
-              choices: roles.map(role => ({name:position.title, value: position.id})),
-              message: "What is the Employee's new role? ",
-            }
-          ])
-  
-        connection.query(
-          'UPDATE employees_db.employee SET ? WHERE ?',
-          [
-            {
-              position_id: roleSelected.position_id,
-            },
-            {
-              id: employeeSelected.employee_id, 
-            }
-          ],
-          (err) => {
-            if (err) throw err;
-            console.log("Employee role updated successfully!")
-            start();
-          }
-        )
-      })
-    })
-  }
 }
 
   module.exports = viewAllDepartments;
