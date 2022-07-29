@@ -3,17 +3,18 @@
 SELECT department.id AS "Department ID", department.deptname AS "Department Name" FROM department;
 
 
--- Supposed to display job title, empid, deprtment, and salary. NOT WORING DISPLAYS 4 LINES
-SELECT employee.position_id, department.deptname, position.title, position.salary
-FROM department
-   JOIN position
-   ON department.id = position.id
-   Join employee
-   ON employee.id = position.id;
+-- MANAGER ID NOT DISPLAYING CORRECTLY. ONLY SHOWS 1 or 2
+SELECT position.id , position.title, position.salary, department.deptname
+FROM position
+   JOIN department
+   ON position.deptid = department.id;
 
 
--- Query that displays all emplayee data. DOES NOT WORK only showing 4 lines
-SELECT position.id, position.title, position.salary, employee.first_name, employee.last_name, employee.manager_id, department.deptname
-FROM department JOIN position ON department.id = position.id
-Join employee ON employee.id = position.id;
+-- MANAGER ID NOT DISPLAYING CORRECTLY. ONLY SHOWS 1 or 2
+SELECT position.id, position.title, position.salary, department.deptname, employee.first_name, employee.last_name, employee.manager_id
+FROM position 
+JOIN department 
+ON position.deptid = department.id
+JOIN employee
+ON employee.id = position.deptid
 
